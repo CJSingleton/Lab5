@@ -14,21 +14,21 @@ namespace CSingleton_Lab5
             long f;
             string input = "y";
 
-            while (input == "y")
+            while (input == "y")//For program exit procedure.
             {
-                Console.WriteLine("Please enter a number between 1 and 25:");
+                Console.WriteLine("Please enter a number between 0 and 25:");//original requirement was for 1-10, but some modifications have been made to the code.
                 n = int.Parse(Console.ReadLine());
                 f = n;
 
-                if (n == 0)
+                if (f == 0)//having this here ensures that the user can input 0 and still get an accurate factorial.
                 {
-                    n = n + 1;
+                    f = f + 1;
                 }
 
-                for (i = n - 1; i >= 1; i--) // multiplying by 0 would break the factorial, so it isn't included 
+                for (i = n - 1; i >= 1; i--) // Multiplying by 0 would break the factorial, so it isn't included 
                                              // as a number to multiply by in the loop.
                 {
-                    f *= i;// another way of writing f = f * i
+                    f *= i;// ...other way of writing f = f * i
                 }
 
                 Console.WriteLine(f);
